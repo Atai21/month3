@@ -11,8 +11,8 @@
     {% for i in posts %}
     <li>
         <h2>{{ i.title }}</h2>
-            {% if post.image %}
-                <p><img src="{{post.image.url}}"></p>
+            {% if i.image %}
+                <p><img src="{{i.image.url}}"></p>
             {% else %}
                <p></p>
             {% endif %}

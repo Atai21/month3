@@ -30,7 +30,7 @@ def create_comment(request, pk):
         data: dict = request.POST
         post = BlogPost.objects.get(pk=pk)
         comment = Comment.objects.create(text=data["text"], post=post)
-        return redirect("blog-detail", pk=pk)
+        return redirect(f'/blog/{pk}/')
 
 #def add_post(request):
 #    if request.method == "POST":
