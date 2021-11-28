@@ -9,3 +9,14 @@ class BlogPost(models.Model):
     image = models.FileField(upload_to="post_images/")
     likes = models.IntegerField(default=0)
     reposts = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title[:20]
+
+class Comment(models.Model):
+    text = models.CharField(max_length=150)
+    date = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text
