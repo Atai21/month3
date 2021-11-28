@@ -1,5 +1,8 @@
 import datetime
 import random
+
+from django.views.generic import CreateView, UpdateView
+
 from .models import BlogPost, Comment
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -52,3 +55,14 @@ def test(request):
         'error': error,
     }
     return render(request, "add_post.html", data)
+
+class BlogCreateView(CreateView):
+    model = BlogPost
+    template_name = 'add_post.html'
+    fields = ['title', 'image', 'description']
+
+class BlogUpdateView(UpdateView):
+    model = BlogPost
+    template_name = "update.html"
+    fields = ['title', 'image', 'description']
+
