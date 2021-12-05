@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books: </title>
+</head>
+<body>
+  <div>
+    <ul>
+    <h2>Books: </h2>
+
+    {% for i in object_list %}
+      <li class="book">
+        <h2><a href="/{{ i.pk }}">{{ i.title }}</a></h2>
+          <br><br>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+
+</body>
+</html>
