@@ -12,16 +12,16 @@
     <h2><a href="/{{ object.pk }}/update">Update</a></h2>
     <h2><a href="/{{ object.pk }}/delete">Delete</a></h2>
 </div>
-<form action="/{{ book.id }}/" method="post">
-        {% csrf_token %}
-        <label>
-            Comment:
-            <input name="text" type="text">
-        </label>
-        <input value="Оставь свой коммент" type="submit">
-    </form>
-    <ul>
-    {% for i in comments %}
+<form action="comment/" method="POST">
+            {% csrf_token %}
+            <label>
+                Comment:
+                <input name="text" type="text">
+            </label>
+
+            <input value="Оставьте свой коментарий" type="submit">
+</form>
+    {% for i in object_list %}
         <li>
             <h3>{{ i.text }}</h3><span>{{ i.created_date }}</span>
         </li>
