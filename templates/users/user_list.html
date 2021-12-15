@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<h2>Users: </h2>
+{% for i in object_list %} <!--Джинджер скобки-->
+    <li class="'users">
+    <h2>{{ i.username }}</h2>
+    <p>{{ i.email }}</p>
+        <br><br>
+    </li>
+{% endfor %}
+</body>
+</html>

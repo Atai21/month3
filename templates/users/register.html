@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<div>
+    <form action="/register/" method="POST"> <!-- method=POST потому что регистрация, создание пользователя ПОСТ метод -->
+        {% csrf_token %}
+        {{ form.as_p }} <!-- as_p Как параграф, т.е. <p> -->
+        <input type="submit" value="Register">
+    </form>
+</div>
+</body>
+</html>
